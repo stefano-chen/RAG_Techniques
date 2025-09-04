@@ -47,3 +47,6 @@ This is a summary of the techniques presented [here](https://github.com/NirDiama
         - the text you embed for each chunk is simply the concatenation of the chunk header and the chunk text.
         - if you use a reranker during retrieval, you'll want to make sure you use this same concatenation there too.
         - Including the chunk headers when presenting the search results to the LLM is also beneficial as it gives the LLM more context, and makes it less likely that it misundestands the meaning of a chunk.
+    * **Contextual Compression** is about compressing retrieved information while preseving query-relevant content.
+        - retrieve chunks from the vector store
+        - Use an ```LLM``` to compress or summerize retrieved chunks, preserving information relevant to the query.
