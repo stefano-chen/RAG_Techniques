@@ -50,3 +50,9 @@ This is a summary of the techniques presented [here](https://github.com/NirDiama
     * **Contextual Compression** is about compressing retrieved information while preseving query-relevant content.
         - retrieve chunks from the vector store
         - Use an ```LLM``` to compress or summerize retrieved chunks, preserving information relevant to the query.
+5. Improve Retrieval
+    * **Fusion Retrieval** combines vector-based similarity search with keyword-based BM25 retrieval.
+        - data processing and text chunking
+        - vector store creation
+        - BM25 index creation for keyword-based retrieval
+        - custom fusion retrieval function that combines both methods
