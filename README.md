@@ -66,3 +66,7 @@ This is a summary of the techniques presented [here](https://github.com/NirDiama
         - Score Normalization: Parse and normalize the relevance score
         - Reordering: To reorder documents based on new scores
         - Selection: Choose the top K documents from the reordered list
+    * **Ensemble Retrieval**
+        - Combining multiple retrieval models or techniques for more robust and accurate results.
+        - Apply different embedding models or retrieval algorithms and use voting or weighting mechanisms to determin the final set of retrieved documents.
+        - [Example](https://python.langchain.com/docs/how_to/ensemble_retriever/)
