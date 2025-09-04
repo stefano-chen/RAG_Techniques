@@ -52,7 +52,7 @@ def rerank_documents(query: str, docs: List[Document], top_n: int = 3) -> List[D
     scored_docs = []
     for doc in docs:
         input_data = {"query": query, "doc": doc.page_content}
-        score = llm_chain.invoke(input_data).relevance_score
+        score = llm_chain.invoke(input_data).relevance_score # type: ignore
         try:
             score = float(score)
         except ValueError: 
