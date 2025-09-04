@@ -56,3 +56,13 @@ This is a summary of the techniques presented [here](https://github.com/NirDiama
         - vector store creation
         - BM25 index creation for keyword-based retrieval
         - custom fusion retrieval function that combines both methods
+    * **Intelligent Reranking** Reranking is a crucial step in RAG systems that aims to improve the relevance and quality of retrieved documents. It involves reassesing and reordering initially retrieved documents to ensure that the most pertinent information is prioritized for subsequent processing or presentation.
+        - Initial Retriever: Often a vector store using embedding-based similarity search.
+        - Pair Creation: Form query-document pairs for each retrieved document.
+        - Reranking Model: This can be either
+            - A LLM for scoring relevance: use prompts to ask the LLM to rate document relevance
+            - A Cross-Encoder model specifically trained for relevance assessment: Feed query-document pairs directly into the model
+        - Scoring Mechanism: A method to assign relevance scores to documents
+        - Score Normalization: Parse and normalize the relevance score
+        - Reordering: To reorder documents based on new scores
+        - Selection: Choose the top K documents from the reordered list
