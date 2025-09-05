@@ -70,3 +70,29 @@ This is a summary of the techniques presented [here](https://github.com/NirDiama
         - Combining multiple retrieval models or techniques for more robust and accurate results.
         - Apply different embedding models or retrieval algorithms and use voting or weighting mechanisms to determin the final set of retrieved documents.
         - [Example](https://python.langchain.com/docs/how_to/ensemble_retriever/)
+    * **Adaptive Retrieval** different types of questions require different retrieval strategies.
+        - Query Classifier: Determines the type of query (Factual, Analytical, Opinion, or Contextual)
+            - Factual: Queries seeking specific, verifiable information.
+            - Analytical: Queries requiring comprehensive analysis or explanation.
+            - Opinion: Queries about subjective matters or seeking diverse viewpoints.
+            - Contextual: Queries that depend on user-specific context.
+        - Adaptive Retrieval Strategies: Each query type triggers a specific retrieval strategy
+            - Fractual Strategy
+                - Enhances the original query using an LLM for better precision.
+                - Retrieves documents based on the enhanced query.
+                - Uses an LLM to rank documents by relevance.
+            - Analytical Strategy
+                - Generates multiple sub-queries using an LLM to cover different aspects of the main query.
+                - Retrieves documents for each sub-query.
+                - Ensures diversity in the final document selection using an LLM.
+            - Opinion Strategy
+                - Identifies different viewpoints on the topic using an LLM.
+                - Retrieves documents representing each viewpoint.
+                - Uses an LLM to select a diverse range of opinions from the retrieved documents.
+            - Contextual Strategy
+                - Incorporates user-specific context into the query using an LLM.
+                - Performs retrieval based on the contextualized query.
+                - Ranks documents considering both relevance and user context.
+        - LLM-Enhaced Ranking: After retrieval, each strategy uses an LLM to perform a final ranking of the documents.
+        - Response Generation: The final set of retrieved documents is passed to an LLM model, which generates a response based on the query and the provided context.
+        
