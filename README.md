@@ -98,3 +98,9 @@ This is a summary of the techniques presented [here](https://github.com/NirDiama
 6. Evaluation
     * **DeepEval Evalluation** Performing evaluations on RAG systems, by covering several metrics and creating test cases.
         - use the ```deepval``` library to conduct test cases on correctness, faithfulness and contextual relevancy of RAG systems.
+7. **Memory**
+    - In many Q&A applications we want to allow the user to have a back-and-forth conversation
+    - there are two approaches: **Chains** and **Agents**
+        - Chains: in which we execute at most one retrieval step
+        - Angents: in which we give an LLM discretion to execute multiple retrieval steps
+        - [Tutorial](https://python.langchain.com/docs/tutorials/qa_chat_history/)
