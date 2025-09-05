@@ -95,4 +95,6 @@ This is a summary of the techniques presented [here](https://github.com/NirDiama
                 - Ranks documents considering both relevance and user context.
         - LLM-Enhaced Ranking: After retrieval, each strategy uses an LLM to perform a final ranking of the documents.
         - Response Generation: The final set of retrieved documents is passed to an LLM model, which generates a response based on the query and the provided context.
-        
+6. Evaluation
+    * **DeepEval Evalluation** Performing evaluations on RAG systems, by covering several metrics and creating test cases.
+        - use the ```deepval``` library to conduct test cases on correctness, faithfulness and contextual relevancy of RAG systems.
